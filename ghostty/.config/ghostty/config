@@ -1,0 +1,10 @@
+
+theme = catppuccin-mocha
+# font-family = GeistMono Nerd Font
+# font-family = NotoMno Nerd Font 
+font-family = CaskaydiaCove Nerd Font
+font-feature = -liga
+font-size = 16
+#background-opacity = 0.95
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+gtk-titlebar = false
