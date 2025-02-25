@@ -90,16 +90,21 @@ if ! command -v fnm &>/dev/null; then
   eval "$(fnm env)"
 fi
 
+# Install starship
+if ! command -v fzf &>/dev/null; then 
+  echo "Installing fzf..."
+  curl -sS https://starship.rs/install.sh | sh
+fi
+
 # Install plugins
 if [[ "$SHELL_NAME" == "zsh" ]]; then
   echo "Installing zsh plugins..."
 
   # Clone necessary plugin repositories
-  ZSH_CUSTOM="${ZSH:-$HOME/.oh-my-zsh}/custom"
-  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-  git clone https://github.com/MichaelAquilina/zsh-you-should-use $ZSH_CUSTOM/plugins/you-should-use
-  git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.config/zsh/zsh-syntax-highlighting
+  git clone https://github.com/fdellwing/zsh-bat.git ~/.config/zsh/zsh-bat
+  git clone https://github.com/jeffreytse/zsh-vi-mode.git ~/.config/zsh/zsh-vi-mode
 fi
 
 # Finish up
