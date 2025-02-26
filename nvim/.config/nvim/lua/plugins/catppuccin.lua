@@ -1,8 +1,9 @@
 return {
   {
     "catppuccin/nvim",
-    lazy = true,
+    lazy = false,
     name = "catppuccin",
+    priority = 1000,
     opts = {
       integrations = {
         aerial = true,
@@ -30,7 +31,7 @@ return {
             information = { "undercurl" },
           },
         },
-        navic = { enabled = true, custom_bg = "lualine" },
+        navic = { enabled = false, custom_bg = "NONE" },
         neotest = true,
         neotree = true,
         noice = true,
