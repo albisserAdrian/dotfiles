@@ -9,15 +9,21 @@ setopt inc_append_history
 
 # Zsh plugins
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/zsh-bat/zsh-bat.zsh
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/zsh-bat/zsh-bat.plugin.zsh
 source ~/.config/zsh/zsh-vi-mode/zsh-vi-mode.zsh
 
 # fzf
 source <(fzf --zsh)
 
 # fnm
-eval "\$(fnm env --use-on-cd --shell $SHELL_NAME)"
+FNM_PATH="$HOME/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$HOME/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Eza aliases
 alias ll="eza -l --icons"
@@ -27,3 +33,10 @@ alias lra="eza -laR --icons"
 alias lt="eza -lT --icons --no-user --no-time --no-permissions --no-filesize"
 alias lta="eza -laT --icons --no-user --no-time --no-permissions --no-filesize"
 alias ls="eza --icons"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
