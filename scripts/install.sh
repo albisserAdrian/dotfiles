@@ -39,6 +39,8 @@ if [[ "$SHELL_NAME" == "zsh" && "$(uname)" == "Darwin" ]]; then
   fi
 fi
 
+# TODO: Install latest bash on mac
+
 # Install tmux
 if ! command -v tmux &>/dev/null; then
   echo "Installing tmux..."

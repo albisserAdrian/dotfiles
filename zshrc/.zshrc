@@ -6,7 +6,6 @@ SAVEHIST=50000
 
 setopt inc_append_history
 
-
 # Zsh plugins
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -16,7 +15,7 @@ source ~/.config/zsh/zsh-vi-mode/zsh-vi-mode.zsh
 # fzf
 source <(fzf --zsh)
 
-# fnm
+# fnm MacOS
 FNM_PATH="$HOME/Library/Application Support/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$HOME/Library/Application Support/fnm:$PATH"
@@ -24,6 +23,15 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 eval "$(fnm env --use-on-cd --shell zsh)"
+
+# Git aliases
+alias ga="git add"
+alias gst="git status"
+alias gc="git commit"
+alias gch="git checkout"
+alias gp="git push"
+alias gl="git pull"
+alias gb="git branch"
 
 # Eza aliases
 alias ll="eza -l --icons"
