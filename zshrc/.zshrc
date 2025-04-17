@@ -15,13 +15,7 @@ source ~/.config/zsh/zsh-vi-mode/zsh-vi-mode.zsh
 # fzf
 source <(fzf --zsh)
 
-# fnm MacOS
-FNM_PATH="$HOME/Library/Application Support/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$HOME/Library/Application Support/fnm:$PATH"
-  eval "`fnm env`"
-fi
-
+# fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Git aliases
