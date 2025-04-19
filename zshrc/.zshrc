@@ -1,5 +1,3 @@
-eval "$(starship init zsh)"
-
 HISTFILE=~/.history
 HISTSIZE=10000
 SAVEHIST=50000
@@ -51,3 +49,7 @@ if [[ -f /etc/os-release ]]; then
     export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
   fi
 fi
+
+eval "$(starship init zsh)"
+
+fastfetch

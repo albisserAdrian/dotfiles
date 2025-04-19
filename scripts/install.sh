@@ -121,6 +121,18 @@ if ! command -v fzf &>/dev/null; then
   fi
 fi
 
+# Install fastfetch
+if ! command -v fastfetch &>/dev/null; then
+  echo "Installing fastfetch..."
+  if [[ "$(uname -a)" == *"Ubuntu"* ]]; then
+    sudo apt install -y fastfetch
+  elif [[ "$(uname -a)" == *"ARCH"* ]]; then
+    sudo pacman -Syu --noconfirm fastfetch
+  elif [[ "$(uname)" == "Darwin" ]]; then
+    brew install fastfetch
+  fi
+fi
+
 # Install eza
 if ! command -v eza &>/dev/null; then
   echo "Installing eza..."
