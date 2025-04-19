@@ -42,3 +42,12 @@ alias ls="eza --icons"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Only runs on Ubuntu
+if [[ -f /etc/os-release ]]; then
+  source /etc/os-release
+  if [[ "$ID" == "ubuntu" ]]; then
+    # neovim
+    export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+  fi
+fi
